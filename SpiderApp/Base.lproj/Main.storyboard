@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="24765" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="25098" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="PLJ-ht-SLL">
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="24743"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="25073"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
@@ -95,19 +95,79 @@
                             <constraint firstItem="4Xj-SU-s9k" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="ytE-c1-SX1"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="3lo-iE-RKM"/>
                     <connections>
                         <outlet property="emailField" destination="GXh-YV-6Ow" id="LcT-47-9mQ"/>
                         <outlet property="messageLabel" destination="mvK-vG-LPt" id="z8A-CF-tkP"/>
                         <outlet property="passwordField" destination="r9u-2V-Yne" id="f6p-Mx-VTh"/>
+                        <segue destination="a4t-Z9-RPW" kind="show" identifier="showHome" id="FHm-FZ-xgu"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1061.8320610687022" y="122.53521126760565"/>
+        </scene>
+        <!--Home View Controller-->
+        <scene sceneID="FEn-tH-oUg">
+            <objects>
+                <viewController id="a4t-Z9-RPW" customClass="HomeViewController" customModule="SpiderApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="pQS-Co-yKz">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="SpidermanBackgroundHome" translatesAutoresizingMaskIntoConstraints="NO" id="ulP-7L-mCd">
+                                <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Welcome" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gCJ-ms-JKs">
+                                <rect key="frame" x="140" y="409.33333333333331" width="113" height="33.666666666666686"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="28"/>
+                                <color key="textColor" name="TextPrimary"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="yld-Wt-OMg"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="gCJ-ms-JKs" firstAttribute="centerY" secondItem="yld-Wt-OMg" secondAttribute="centerY" id="5bw-J4-0kV"/>
+                            <constraint firstItem="ulP-7L-mCd" firstAttribute="leading" secondItem="yld-Wt-OMg" secondAttribute="leading" id="3xq-UF-Dyp"/>
+                            <constraint firstItem="gCJ-ms-JKs" firstAttribute="leading" secondItem="yld-Wt-OMg" secondAttribute="leading" constant="24" id="CL3-D0-leM"/>
+                            <constraint firstItem="yld-Wt-OMg" firstAttribute="trailing" secondItem="gCJ-ms-JKs" secondAttribute="trailing" constant="24" id="JyQ-dr-6a1"/>
+                            <constraint firstItem="yld-Wt-OMg" firstAttribute="trailing" secondItem="ulP-7L-mCd" secondAttribute="trailing" id="btg-Kg-fpW"/>
+                            <constraint firstItem="ulP-7L-mCd" firstAttribute="top" secondItem="pQS-Co-yKz" secondAttribute="top" id="kf6-CE-XvK"/>
+                            <constraint firstAttribute="bottom" secondItem="ulP-7L-mCd" secondAttribute="bottom" id="uEE-8J-7HG"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="fzK-AJ-OGZ"/>
+                    <connections>
+                        <outlet property="greetingLabel" destination="gCJ-ms-JKs" id="xd6-7y-GWo"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="3zE-R1-FXL" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1976" y="129"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="LLj-3N-0b1">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="PLJ-ht-SLL" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="sGJ-Cm-qbJ">
+                        <rect key="frame" x="0.0" y="118" width="393" height="54"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="47o-tc-6Ld"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="7Ju-lG-mX7" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="135.1145038167939" y="122.53521126760565"/>
         </scene>
     </scenes>
     <resources>
         <image name="SpidermanBackground" width="168" height="299"/>
+        <image name="SpidermanBackgroundHome" width="1183" height="2560"/>
         <image name="SpidermanLogo" width="1600" height="640"/>
         <namedColor name="BrandRed">
             <color red="0.90196078431372551" green="0.14117647058823529" blue="0.16078431372549021" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

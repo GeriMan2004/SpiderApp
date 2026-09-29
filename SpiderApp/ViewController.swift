@@ -1,10 +1,10 @@
 import UIKit
 
 struct LoginForm {
-    
+
     let email: String
     let password: String
-    
+
     enum ValidationResult {
         case emptyEmail
         case invalidEmail
@@ -30,15 +30,22 @@ struct LoginForm {
     }
 }
 
+struct LocalLoginService {
+
+    let shouldSucceed: Bool
+
+    func login() -> Bool {
+        shouldSucceed
+    }
+}
+
 final class ViewController: UIViewController {
     
     @IBOutlet private weak var messageLabel: UILabel!
     @IBOutlet private weak var emailField: UITextField!
     @IBOutlet private weak var passwordField: UITextField!
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
-    }
+
+    private let loginService = LocalLoginService(shouldSucceed: true)
     
     @IBAction private func loginTapped(_ sender: UIButton) {
         
@@ -64,7 +71,43 @@ final class ViewController: UIViewController {
             messageLabel.text = "Password must be at least 8 characters"
             
         case .success:
-            messageLabel.text = "Login successful"
+            guard loginService.login() else {
+                messageLabel.text = "Login service unavailable"
+                return
+            }
+
+            performSegue(withIdentifier: "showHome", sender: email)
         }
+    }
+
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        guard
+            segue.identifier == "showHome",
+            let home = segue.destination as? HomeViewController,
+            let email = sender as? String
+        else {
+            return
+        }
+
+        home.email = email
+    }
+
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        print("Login viewDidLoad")
+    }
+
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        print("Login viewWillAppear")
+    }
+
+    override func viewDidDisappear(_ animated: Bool) {
+        super.viewDidDisappear(animated)
+        print("Login viewDidDisappear")
+    }
+
+    deinit {
+        print("Login deinit")
     }
 }
