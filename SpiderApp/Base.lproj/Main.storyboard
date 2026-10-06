@@ -115,36 +115,139 @@
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="SpidermanBackgroundHome" translatesAutoresizingMaskIntoConstraints="NO" id="ulP-7L-mCd">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="88" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="yuT-qv-aE2">
                                 <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
-                            </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Welcome" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gCJ-ms-JKs">
-                                <rect key="frame" x="140" y="409.33333333333331" width="113" height="33.666666666666686"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="28"/>
-                                <color key="textColor" name="TextPrimary"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                                <color key="backgroundColor" name="LoginBackground"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="default" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="CharacterRowCell" id="xfA-C9-1dj" customClass="CharacterRowCell" customModule="SpiderApp" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="50" width="393" height="80"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="xfA-C9-1dj" id="gNA-Sa-xuq">
+                                            <rect key="frame" x="0.0" y="0.0" width="362.66666666666669" height="80"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="q9g-lr-CmD" userLabel="avatarView">
+                                                    <rect key="frame" x="16" y="12" width="56" height="56"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="56" id="A03-Ds-ucz"/>
+                                                        <constraint firstAttribute="height" constant="56" id="RMo-Oq-Q5D"/>
+                                                    </constraints>
+                                                </imageView>
+                                                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="Rw4-st-k01" userLabel="textStack">
+                                                    <rect key="frame" x="84" y="12" width="262.66666666666669" height="56"/>
+                                                    <subviews>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="751" text="Name" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Nm1-lb-k02" userLabel="nameLabel">
+                                                            <rect key="frame" x="0.0" y="0.0" width="262.66666666666669" height="26"/>
+                                                            <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
+                                                            <color key="textColor" name="TextPrimary"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Identity · Universe" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Sb1-lb-k03" userLabel="subtitleLabel">
+                                                            <rect key="frame" x="0.0" y="30" width="262.66666666666669" height="26"/>
+                                                            <fontDescription key="fontDescription" style="UICTFontTextStyleSubhead"/>
+                                                            <color key="textColor" name="TextSecondary"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                    </subviews>
+                                                </stackView>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="q9g-lr-CmD" firstAttribute="leading" secondItem="gNA-Sa-xuq" secondAttribute="leading" constant="16" id="yIR-0N-DXl"/>
+                                                <constraint firstItem="q9g-lr-CmD" firstAttribute="centerY" secondItem="gNA-Sa-xuq" secondAttribute="centerY" id="KQp-Ss-Hlq"/>
+                                                <constraint firstItem="q9g-lr-CmD" firstAttribute="top" relation="greaterThanOrEqual" secondItem="gNA-Sa-xuq" secondAttribute="top" constant="12" id="Av1-tp-k04"/>
+                                                <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="q9g-lr-CmD" secondAttribute="bottom" constant="12" id="Av2-bt-k05"/>
+                                                <constraint firstItem="Rw4-st-k01" firstAttribute="leading" secondItem="q9g-lr-CmD" secondAttribute="trailing" constant="12" id="St1-ld-k06"/>
+                                                <constraint firstAttribute="trailing" secondItem="Rw4-st-k01" secondAttribute="trailing" constant="16" id="St2-tr-k07"/>
+                                                <constraint firstItem="Rw4-st-k01" firstAttribute="top" secondItem="gNA-Sa-xuq" secondAttribute="top" constant="12" id="St3-tp-k08"/>
+                                                <constraint firstAttribute="bottom" secondItem="Rw4-st-k01" secondAttribute="bottom" constant="12" id="St4-bt-k09"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <color key="backgroundColor" name="FieldBackground"/>
+                                        <connections>
+                                            <outlet property="avatarView" destination="q9g-lr-CmD" id="Oc1-av-k10"/>
+                                            <outlet property="nameLabel" destination="Nm1-lb-k02" id="Oc2-nm-k11"/>
+                                            <outlet property="subtitleLabel" destination="Sb1-lb-k03" id="Oc3-sb-k12"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="yld-Wt-OMg"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" name="LoginBackground"/>
                         <constraints>
-                            <constraint firstItem="gCJ-ms-JKs" firstAttribute="centerY" secondItem="yld-Wt-OMg" secondAttribute="centerY" id="5bw-J4-0kV"/>
-                            <constraint firstItem="ulP-7L-mCd" firstAttribute="leading" secondItem="yld-Wt-OMg" secondAttribute="leading" id="3xq-UF-Dyp"/>
-                            <constraint firstItem="gCJ-ms-JKs" firstAttribute="leading" secondItem="yld-Wt-OMg" secondAttribute="leading" constant="24" id="CL3-D0-leM"/>
-                            <constraint firstItem="yld-Wt-OMg" firstAttribute="trailing" secondItem="gCJ-ms-JKs" secondAttribute="trailing" constant="24" id="JyQ-dr-6a1"/>
-                            <constraint firstItem="yld-Wt-OMg" firstAttribute="trailing" secondItem="ulP-7L-mCd" secondAttribute="trailing" id="btg-Kg-fpW"/>
-                            <constraint firstItem="ulP-7L-mCd" firstAttribute="top" secondItem="pQS-Co-yKz" secondAttribute="top" id="kf6-CE-XvK"/>
-                            <constraint firstAttribute="bottom" secondItem="ulP-7L-mCd" secondAttribute="bottom" id="uEE-8J-7HG"/>
+                            <constraint firstItem="yuT-qv-aE2" firstAttribute="top" secondItem="pQS-Co-yKz" secondAttribute="top" id="TcG-DN-AMh"/>
+                            <constraint firstAttribute="trailing" secondItem="yuT-qv-aE2" secondAttribute="trailing" id="ieh-H7-SaK"/>
+                            <constraint firstAttribute="bottom" secondItem="yuT-qv-aE2" secondAttribute="bottom" id="nAH-5l-jeB"/>
+                            <constraint firstItem="yuT-qv-aE2" firstAttribute="leading" secondItem="pQS-Co-yKz" secondAttribute="leading" id="r7z-uu-SPw"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="fzK-AJ-OGZ"/>
                     <connections>
-                        <outlet property="greetingLabel" destination="gCJ-ms-JKs" id="xd6-7y-GWo"/>
+                        <outlet property="tableView" destination="yuT-qv-aE2" id="Oc4-tv-k13"/>
+                        <segue destination="Dt1-vc-k20" kind="show" identifier="showCharacter" id="Sg1-sc-k14"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3zE-R1-FXL" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1976" y="129"/>
+        </scene>
+        <!--Character Detail View Controller-->
+        <scene sceneID="Dt0-sc-k21">
+            <objects>
+                <viewController id="Dt1-vc-k20" customClass="CharacterDetailViewController" customModule="SpiderApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Dt2-vw-k22">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="12" translatesAutoresizingMaskIntoConstraints="NO" id="Dt3-sk-k23" userLabel="detailStack">
+                                <rect key="frame" x="20" y="138" width="353" height="320"/>
+                                <subviews>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Dt4-iv-k24" userLabel="avatarView">
+                                        <rect key="frame" x="0.0" y="0.0" width="353" height="200"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="200" id="Dt5-hc-k25"/>
+                                        </constraints>
+                                    </imageView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Dt6-lb-k26" userLabel="nameLabel">
+                                        <rect key="frame" x="0.0" y="212" width="353" height="34"/>
+                                        <fontDescription key="fontDescription" style="UICTFontTextStyleTitle0"/>
+                                        <color key="textColor" name="TextPrimary"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Identity" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Dt7-lb-k27" userLabel="identityLabel">
+                                        <rect key="frame" x="0.0" y="258" width="353" height="24"/>
+                                        <fontDescription key="fontDescription" style="UICTFontTextStyleTitle3"/>
+                                        <color key="textColor" name="TextPrimary"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Universe" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Dt8-lb-k28" userLabel="universeLabel">
+                                        <rect key="frame" x="0.0" y="294" width="353" height="26"/>
+                                        <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
+                                        <color key="textColor" name="TextSecondary"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="Dt9-sa-k29"/>
+                        <color key="backgroundColor" name="LoginBackground"/>
+                        <constraints>
+                            <constraint firstItem="Dt3-sk-k23" firstAttribute="top" secondItem="Dt9-sa-k29" secondAttribute="top" constant="20" id="Dc1-tp-k30"/>
+                            <constraint firstItem="Dt3-sk-k23" firstAttribute="leading" secondItem="Dt9-sa-k29" secondAttribute="leading" constant="20" id="Dc2-ld-k31"/>
+                            <constraint firstItem="Dt9-sa-k29" firstAttribute="trailing" secondItem="Dt3-sk-k23" secondAttribute="trailing" constant="20" id="Dc3-tr-k32"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="Dt10-ni-k33"/>
+                    <connections>
+                        <outlet property="avatarView" destination="Dt4-iv-k24" id="Do1-av-k34"/>
+                        <outlet property="identityLabel" destination="Dt7-lb-k27" id="Do2-id-k35"/>
+                        <outlet property="nameLabel" destination="Dt6-lb-k26" id="Do3-nm-k36"/>
+                        <outlet property="universeLabel" destination="Dt8-lb-k28" id="Do4-un-k37"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Dt11-fr-k38" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2890" y="129"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="LLj-3N-0b1">
@@ -167,13 +270,15 @@
     </scenes>
     <resources>
         <image name="SpidermanBackground" width="168" height="299"/>
-        <image name="SpidermanBackgroundHome" width="1183" height="2560"/>
         <image name="SpidermanLogo" width="1600" height="640"/>
         <namedColor name="BrandRed">
             <color red="0.90196078431372551" green="0.14117647058823529" blue="0.16078431372549021" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <namedColor name="FieldBackground">
             <color red="0.10980392156862745" green="0.10980392156862745" blue="0.11764705882352941" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="LoginBackground">
+            <color red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <namedColor name="TextPrimary">
             <color red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
